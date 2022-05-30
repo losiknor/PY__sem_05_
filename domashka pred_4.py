@@ -30,3 +30,19 @@ path = 'randomCoefPolynom.txt'
 
 with open(path, 'w') as d:
     d.write(resultT)
+
+# Второй вариант
+k = int(input('Введите степень k: '))
+
+import random
+mass = random.sample(range(9), k+1)
+
+print(mass)
+
+file = open('Task4.txt', 'w')
+p = k
+for i in range(len(mass)-1):
+    file.write(f'{mass[i]}x^{p} + ')
+    p = p - 1
+file.write(f' {mass[k]} = 0' + '\n')
+file.close()
